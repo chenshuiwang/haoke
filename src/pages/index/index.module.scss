@@ -1,0 +1,112 @@
+.hk_index{
+  .nav_content {
+    background-color: #fff;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    .nav_item {
+      width: 25%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      .pic {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 60%;
+        }
+      }
+      span {
+        text-align: center;
+      }
+    }
+  }
+  .group {
+    padding: 0 10px;
+    .group_title {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      span {
+  
+      }
+    }
+  
+    .group_list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .group_item {
+        padding: 20px 5px;
+        background-color: #fff;
+        width: 48%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .group_item_text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex: 3;
+          h4{
+            margin-bottom: 5px;
+          }
+        }
+  
+        .pic {
+          flex: 2;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    
+  }
+  .news {
+    padding: 10px;
+    background-color: #fff;
+    .news_title {
+      h4 {
+  
+      }
+    }
+  
+    .news_list {
+      .news_item {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        .pic {
+          width: 40%;
+          img {
+  
+          }
+        }
+  
+        .item_text {
+          display: flex;
+          width: 60%;
+          display: flex;
+          padding-left: 15px;
+          flex-direction: column;
+          justify-content: space-between;
+          .title {
+            h4 {
+  
+            }
+          }
+  
+          .desc {
+            display: flex;
+            justify-content: space-between;
+            span {
+  
+            }
+          }
+        }
+      }
+    }
+  }
+}
