@@ -1,31 +1,26 @@
 import React from 'react';
-import TabBarExample from './component/TarBar'
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  HashRouter as Router,
+  Redirect,
+  Route
 } from "react-router-dom";
+import Home from './pages/home'
+import MapFound from './pages/mapFound'
+import CitySelect from './pages/citySelect'
+import Index from './pages/index'
 function App() {
   return (
     <div className="App">
-      {/* <TabBarExample></TabBarExample> */}
       <Router>
-        <nav>
-          <Link to='/'>首页</Link>
-          <Link to='/found'>找房</Link>
-          <Link to='/infom'>资讯</Link>
-          <Link to='/my'>我的</Link>
-        </nav>
-        <section>
-          <Route path="/" component={Btn} exact></Route>
-          <Route path="/found" component={Btn} exact></Route>
-          <Route path="/infom" component={Btn} exact></Route>
-          <Route path="/my" component={Btn} exact></Route>
-        </section>
+          <Route path="/home" component={Home}></Route>
+          <Route exact  path="/" exact>
+            <Redirect to="/home" ></Redirect> 
+          </Route>
+          <Route path="/mapFound" component={MapFound} exact></Route>
+          <Route path="/citySelect" component={CitySelect} exact></Route>
+          <Route path='/index' component={Index}></Route>
       </Router>
     </div>
   );
 }
-const Btn =() => <h1>213</h1>
 export default App;
