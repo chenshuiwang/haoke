@@ -2,9 +2,11 @@ import axios from 'axios'
 import { Toast } from 'antd-mobile';
 axios.defaults.baseURL = 'http://157.122.54.189:9060'
 export const baseURL = 'http://157.122.54.189:9060'
+let ajaxNum = 0
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前添加提示
+    ajaxNum ++;
     Toast.loading('加载中...', 0);
     return config;
   }, function (error) {
@@ -15,7 +17,10 @@ axios.interceptors.request.use(function (config) {
 // 添加响应拦截器
 axios.interceptors.response.use(function (response) {
     // 对响应数据撤销提示
-    Toast.hide()
+    ajaxNum --;
+    if(ajaxNum == 0){
+      Toast.hide()
+    }
     return response;
   }, function (error) {
     // 对响应错误做点什么

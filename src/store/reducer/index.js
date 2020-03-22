@@ -1,6 +1,3 @@
-const defaultState = {
-    num: 1000
-}
-export default (state = defaultState) => {
-    return state
-}
+import mapReducer from './mapReducer'
+import { combineReducers } from "redux";
+export default combineReducers({mapReducer})

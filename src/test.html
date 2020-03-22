@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<title>CanvasLayer</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=50aXl8HyXrsWbGInXXlkw9WRG9AlA0sP"></script>
+<style type="text/css">
+body, html,#container {width: 50vw;height: 50vh;overflow: hidden;margin:0;font-family:"微软雅黑";}
+</style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+<script type="text/javascript">
+   
+
+var myCity = new BMap.LocalCity();
+myCity.get(function(result){
+	var cityName = result.name;
+	alert("当前定位城市:"+cityName);
+}); 
+
+// function Point(x,y){
+//     this.x=x;
+//     this.y = y;
+// }
+// Point.prototype.toString = function(){
+//     return '('+this.x+','+this.y+')';
+// }
+// var p= new Point(1,2);
+// class Point2 {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
+//   toString() {
+//     return '(' + this.x + ', ' + this.y + ')';
+//   }
+// }
+// var p2 = new Point2(1,2)
+
+// if(window.navigator.geolocation){
+// 	console.log(1333)
+// 	window.navigator.geolocation.getCurrentPosition((resolve) => {},(reject) => {})
+// }
+</script>

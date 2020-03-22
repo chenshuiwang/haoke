@@ -6,6 +6,7 @@ import nav2 from '../../assets/images/nav-2.png'
 import nav3 from '../../assets/images/nav-3.png'
 import nav4 from '../../assets/images/nav-4.png'
 import indexCss from './index.module.scss'
+import Search from '../../component/CityInput'
 class Index extends Component {
   state = {
     data: [],
@@ -20,22 +21,32 @@ class Index extends Component {
     news:[]
   }
   async componentDidMount() {
-      const res = await axios.get(baseURL + '/home/swiper');
-      this.setState({
-          data:res.data.body
-      })
-      const res2 = await axios.get(baseURL + '/home/groups')
-      this.setState({
-          group: res2.data.body
-      })
-      const res3 = await axios.get(baseURL + '/home/news')
-      console.log(res3)
-      this.setState({
-          news: res3.data.body
-      })
+    this.getCarousel();
+    this.getGroups();
+    this.getNews(); 
+  }
+  async getCarousel(){
+    const res = await axios.get(baseURL + '/home/swiper');
+    this.setState({
+        data:res.data.body
+    })
+  }
+  async getGroups(){
+    const res = await axios.get(baseURL + '/home/groups')
+    this.setState({
+        group: res.data.body
+    })
+  }
+  async getNews(){
+    const res = await axios.get(baseURL + '/home/news')
+    this.setState({
+        news: res.data.body
+    })
   }
   render() {
     return (<div className={indexCss.hk_index}>
+        {/* 搜索框 */}
+        <Search/>
         {/* 轮播图 */}
         {this.state.data.length && <Carousel
           autoplay
@@ -115,4 +126,5 @@ class Index extends Component {
     </div>);
   }
 }
+
 export default Index; 
