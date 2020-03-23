@@ -17,6 +17,7 @@ class App extends React.Component {
   render() { 
     return (
       <div className="App">
+        {this.props.cityName&&
         <Router>
             <Route path="/home" component={Home}></Route>
             <Route exact  path="/" exact>
@@ -25,11 +26,14 @@ class App extends React.Component {
             <Route path="/mapFound" component={MapFound} exact></Route>
             <Route path="/citySelect" component={CitySelect} exact></Route>
             <Route path='/index' component={Index}></Route>
-        </Router>
+        </Router>}
       </div>
     );
   }
 }
+const mapStateToProps = (state) => ({
+  cityName: state.mapReducer.city.name
+})
 const mapDispathToProps = (dispatch) => {
   return {
     initCity(){
@@ -37,4 +41,4 @@ const mapDispathToProps = (dispatch) => {
     }
   }
 }
-export default connect(null,mapDispathToProps)(App);
+export default connect(mapStateToProps,mapDispathToProps)(App);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios,{baseURL} from '../../utils/axios'
-import { Carousel, WingBlank } from 'antd-mobile';
+import { Carousel } from 'antd-mobile';
 import nav1 from '../../assets/images/nav-1.png'
 import nav2 from '../../assets/images/nav-2.png'
 import nav3 from '../../assets/images/nav-3.png'

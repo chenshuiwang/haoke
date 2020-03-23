@@ -18,7 +18,7 @@ axios.interceptors.request.use(function (config) {
 axios.interceptors.response.use(function (response) {
     // 对响应数据撤销提示
     ajaxNum --;
-    if(ajaxNum == 0){
+    if(ajaxNum === 0){
       Toast.hide()
     }
     return response;

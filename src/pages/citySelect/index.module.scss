@@ -1,0 +1,17 @@
+.cityList {
+    background-color: #fff;
+    div {
+      .city_item {
+          font-size: 16px;
+        .city_title {
+            padding: 10px;
+            color: #bbb;  
+        }
+  
+        .city_name {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
