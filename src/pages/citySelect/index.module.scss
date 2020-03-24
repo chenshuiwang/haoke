@@ -1,17 +1,57 @@
-.cityList {
+body{
+  // height: 100vh;
+  // overflow: hidden;
+}
+.citySelect {
+  position: relative;
+  .citySelect_nav {
+    border-bottom: 1px solid #eee;
+  }
+  .cityList {
     background-color: #fff;
-    div {
-      .city_item {
-          font-size: 16px;
-        .city_title {
-            padding: 10px;
-            color: #bbb;  
-        }
-  
-        .city_name {
-            padding: 10px;
-            border-bottom: 1px solid #ccc;
-        }
+    height: calc(100vh - 45px);
+    overflow: hidden;
+    .city_item {
+      font-size: 16px;
+      .city_title {
+        height: 40px;
+        color: #bbb;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .city_name {
+        height: 40px;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
       }
     }
   }
+  .right {
+    margin-top: 45px;
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    color: #333;
+    height: 80%;
+    justify-content: space-around;
+    align-items: center;
+    .item{
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+    .active{
+      background-color: #21b97a;
+      color: #fff;
+      border-radius: 50%;
+    }
+  }
+}

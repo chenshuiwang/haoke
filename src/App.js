@@ -10,6 +10,7 @@ import CitySelect from './pages/citySelect'
 import Index from './pages/index'
 import {getLocalCityAction} from './store/actionCreator'
 import {connect} from 'react-redux'
+import MyList from './component/demo/index'
 class App extends React.Component {
   componentDidMount() {
     this.props.initCity()
@@ -26,6 +27,7 @@ class App extends React.Component {
             <Route path="/mapFound" component={MapFound} exact></Route>
             <Route path="/citySelect" component={CitySelect} exact></Route>
             <Route path='/index' component={Index}></Route>
+            <Route path='/mylist' component={MyList}></Route>
         </Router>}
       </div>
     );
