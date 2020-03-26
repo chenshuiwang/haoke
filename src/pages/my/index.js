@@ -3,11 +3,11 @@ import indexCss from './index.module.scss'
 class Index extends Component {
     render() {
         return (<div className={indexCss.personal}>
-            <img src="http://157.122.54.189:9060/img/profile/bg.png" />
+            <img src="http://157.122.54.189:9060/img/profile/bg.png" alt=""/>
             {/* 卡片 */}
             <div className={indexCss.card}>
                 <div className={indexCss.logo}>
-                    <img src="http://157.122.54.189:9060/img/profile/avatar.png"></img>
+                    <img src="http://157.122.54.189:9060/img/profile/avatar.png" alt=""></img>
                 </div>
                 <div className={indexCss.content}>
                     <span>游客</span>
@@ -43,7 +43,7 @@ class Index extends Component {
             </div>
             {/* 底部图片 */}
             <div className={indexCss.pic}>
-                <img src="http://157.122.54.189:9060/img/profile/join.png"/>
+                <img src="http://157.122.54.189:9060/img/profile/join.png" alt=""/>
             </div>
         </div>);
     }

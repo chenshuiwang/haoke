@@ -50,7 +50,7 @@ class Home extends React.Component {
             selectedIcon={<i className="iconfont icon-infom"></i>}
             title="资讯"
             key="Infom"
-            selected={pathname === '/home//news'}
+            selected={pathname === '/home/news'}
             onPress={() => history.push('/home/news')}
           >
             <Route path="/home/news" component={News}></Route>

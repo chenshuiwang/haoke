@@ -22,3 +22,12 @@ export const getPointAction = (city, address) => {
         })
     }
 }
+
+export const changeText = () => {
+    return  (dispatch) => {
+        dispatch({
+            type:"change",
+            name:"4353"
+        })
+    }
+} 

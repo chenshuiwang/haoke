@@ -1,0 +1,110 @@
+.map_found {
+  position: relative;
+  .nav {
+  }
+
+  .map {
+    .container {
+      width: 100%;
+      height: calc(100vh - 45px);
+      .circle{
+        background-color: #23bb78;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fff;
+      }
+      .rect{
+        background-color: #23bb78;
+        color: #fff;
+      }
+    }
+  }
+
+  .house_list {
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    height: 50vh;
+    width: 100%;
+    transition: all 1s;
+    .list_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      padding: 0 10px;
+      background-color: #eee;
+      span:first-child {
+        font-weight: bold;
+        font-size: 16px;
+      }
+      span:nth-child(2){
+        font-size: 13px;
+      }
+    }
+  
+    .list_content{
+      height: calc(50vh -45px) !important;
+      padding: 10px;
+      overflow: auto;
+      .list_item {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        .house_img {
+          flex: 1;
+          img {
+    
+          }
+        }
+    
+        .house_desc {
+          flex: 2;
+          padding-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .title {
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .introduce {
+            color: #ccc;
+            
+          }
+    
+          .tags {
+            display: flex;
+            span{
+              padding: 3px;
+              margin-right: 5px;
+              border-radius: 2px;
+            }
+            span:nth-child(2n+1) {
+              color:#39becd;
+              background-color: #e1f5f8;
+            }
+            span:nth-child(2n) {
+              color:#3fc28c;
+              background-color: #e1f5ed;
+             
+            }
+          }
+    
+          .price {
+            color: red;
+            span{
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
