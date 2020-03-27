@@ -46,7 +46,9 @@ class Index extends Component {
   render() {
     return (<div className={indexCss.hk_index}>
         {/* 搜索框 */}
-        <Search/>
+        <div className={indexCss.search}>
+          <Search/>
+        </div>
         {/* 轮播图 */}
         {this.state.data.length && <Carousel
           autoplay

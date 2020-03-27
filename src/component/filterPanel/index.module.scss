@@ -1,0 +1,40 @@
+.filter_panel {
+  .filter_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    font-size: 17px;
+    padding: 0 40px;
+    border-bottom: 1px solid #ddd;
+    .filter_title_item {
+      
+    }
+    .active {
+      color: #21b97a;
+    }
+  }
+  .picker{
+    .btns {
+        height: 35px;
+        display: flex;
+        font-size: 15px;
+        border-top: 1px solid #ccc;
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .btns_cancel {
+          flex: 1;
+          color: #21b97a;
+          background-color: #fff;
+        }
+        .btns_item {
+          flex: 2;
+          color: #fff;
+          background-color: #21b97a;
+        }
+      }
+  }
+}

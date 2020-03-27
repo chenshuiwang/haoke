@@ -3,6 +3,7 @@ import { NavBar, Icon } from 'antd-mobile';
 import indexCss from './index.module.scss'
 import { connect } from "react-redux"
 import axios, { baseURL } from '../../utils/axios'
+import HouseList from '../../component/houseList'
 const BMap = window.BMap
 var map;
 class App extends Component {
@@ -99,29 +100,16 @@ class App extends Component {
             <div className={indexCss.map}>
                 <div className={indexCss.container} id="container">25252</div>
             </div>
+            <HouseList />
             {/* 租房列表 */}
             {this.state.showList && <div className={indexCss.house_list} >
                 <div className={indexCss.list_title}>
                     <span>房屋列表</span>
                     <span>更多房源</span>
                 </div>
-                {this.state.houseList.map((v, i) => <div key={i} className={indexCss.list_content}>
-                    <div className={indexCss.list_item} >
-                        <div className={indexCss.house_img}>
-                            <img src={baseURL + v.houseImg} alt="" />
-                        </div>
-                        <div className={indexCss.house_desc}>
-                            <div className={indexCss.title}>{v.title}</div>
-                            <div className={indexCss.introduce}>{v.desc}</div>
-                            <div className={indexCss.tags}>
-                                {v.tags.map(vv => <span key={vv}>{vv}</span>)}
-                            </div>
-                            <div className={indexCss.price}>
-                                <span>{v.price}</span>元/月
-                        </div>
-                        </div>
-                    </div>
-                </div>)}
+                <div className={indexCss.list_content}>
+                    {this.state.houseList.map((v, i) => <HouseList data={v} key={i}/>)}
+                </div>
             </div>}
         </div>);
     }

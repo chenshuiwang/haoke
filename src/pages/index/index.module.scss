@@ -1,5 +1,11 @@
 .hk_index{
   position: relative;
+  .search{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    z-index: 9;
+  }
   .nav_content {
     background-color: #fff;
     padding: 20px 0;

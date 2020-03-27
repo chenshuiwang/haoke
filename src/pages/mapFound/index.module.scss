@@ -28,7 +28,6 @@
 
   .house_list {
     position: absolute;
-    background-color: #fff;
     bottom: 0;
     height: 50vh;
     width: 100%;
@@ -50,11 +49,13 @@
     }
   
     .list_content{
-      height: calc(50vh -45px) !important;
-      padding: 10px;
+      height: calc(50vh -40px) !important;
+      padding: 0 10px;
       overflow: auto;
+      background-color: #fff;
       .list_item {
         display: flex;
+        padding: 10px 0;
         justify-content: space-between;
         border-bottom: 1px solid #eee;
         .house_img {

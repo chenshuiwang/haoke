@@ -1,0 +1,14 @@
+.found{
+    background-color: #fff;
+    .nav{
+        background-color: #eee;
+        position: relative;
+    }
+    .input_content{
+        position: absolute;
+        width: calc(100vw - 40px);
+        top: 6px;
+        height: 35px;
+        left: 40px;
+    }
+}

@@ -1,0 +1,50 @@
+.list_item {
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  .house_img {
+    flex: 1;
+    img {
+    }
+  }
+
+  .house_desc {
+    flex: 2;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .introduce {
+      color: #ccc;
+    }
+
+    .tags {
+      display: flex;
+      span {
+        padding: 3px;
+        margin-right: 5px;
+        border-radius: 2px;
+      }
+      span:nth-child(2n + 1) {
+        color: #39becd;
+        background-color: #e1f5f8;
+      }
+      span:nth-child(2n) {
+        color: #3fc28c;
+        background-color: #e1f5ed;
+      }
+    }
+
+    .price {
+      color: red;
+      span {
+        font-size: 16px;
+      }
+    }
+  }
+}
