@@ -7,55 +7,7 @@
   right: 0;
   transform: translateX(100%);
   overflow: auto;
-  .slider_item {
-    padding: 0 10px;
-    .slider_item_title {
-      font-size: 16px;
-      padding-top: 20px;
-    }
-    .slider_item_child {
-      padding-bottom: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      border-bottom: 1px solid #ddd;
-      span {
-        width: 70px;
-        height: 32px;
-        border: 1px solid #ddd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 3px;
-        margin-right: 5%;
-        margin-top: 5%;
-      }
-    }
-  }
-  .btns {
-    width: 100%;
-    height: 35px;
-    display: flex;
-    font-size: 15px;
-    border-top: 1px solid #ccc;
-    position: fixed;
-    bottom: 0;
-    background-color: #fff;
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .btns_cancel {
-      flex: 1;
-      color: #21b97a;
-      background-color: #fff;
-    }
-    .btns_item {
-      flex: 2;
-      color: #fff;
-      background-color: #21b97a;
-    }
-  }
+  z-index: 10;
 }
 .slider-out {
 }

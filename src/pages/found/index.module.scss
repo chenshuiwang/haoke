@@ -11,4 +11,9 @@
         height: 35px;
         left: 40px;
     }
+    .house_list{
+        padding: 0 10px;
+        height: calc(100vh - 135px);
+        overflow: hidden;
+    }
 }
