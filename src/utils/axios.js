@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { Toast } from 'antd-mobile';
-axios.defaults.baseURL = 'http://157.122.54.189:9060'
-export const baseURL = 'http://157.122.54.189:9060'
+axios.defaults.baseURL = process.env.REACT_APP_URL
+export const baseURL = process.env.REACT_APP_URL
 let ajaxNum = 0
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {

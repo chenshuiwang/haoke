@@ -7,6 +7,9 @@ export default (state = defaultState,action) => {
     if(action.type === 'initCity'){
         newState.city = action.value
         return newState
+    }else if(action.type === 'clearCity'){
+        newState.city = {}
+        return newState
     }
     return state
 }

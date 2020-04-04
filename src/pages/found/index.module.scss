@@ -1,5 +1,6 @@
 .found{
     background-color: #fff;
+    position: relative;
     .nav{
         background-color: #eee;
         position: relative;
@@ -15,5 +16,18 @@
         padding: 0 10px;
         height: calc(100vh - 135px);
         overflow: hidden;
+    }
+    .nomore{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 135px);
+        position: absolute;
+        bottom: 0;
+        img{
+            width: 120px;
+        }
     }
 }

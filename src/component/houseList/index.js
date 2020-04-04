@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import indexCss from './index.module.scss'
 import {baseURL} from '../../utils/axios'
 const Index = (props) => <div>

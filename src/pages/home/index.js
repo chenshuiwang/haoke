@@ -1,10 +1,11 @@
 import { TabBar } from 'antd-mobile';
-import React from 'react'
+import React,{lazy,Suspense} from 'react'
 import { Route } from "react-router-dom";
-import Index from "../index/index";
-import Found from "../found";
-import News from "../news";
-import My from "../my";
+const Index = lazy(() => import("../index/index"))
+const Found = lazy(() => import("../found"))
+const News = lazy(() => import("../news"))
+const My = lazy(() => import("../my"))
+const Loading = () => <div></div>
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -32,7 +33,9 @@ class Home extends React.Component {
             onPress={() => history.push('/home/index')}
             data-seed="logId"
           >
-            <Route path="/home/index" component={Index}></Route>
+            <Suspense fallback={<Loading/>}>
+              <Route path="/home/index" component={Index}></Route>
+            </Suspense>
           </TabBar.Item>
           <TabBar.Item
             icon={<i className="iconfont icon-findHouse"></i>}

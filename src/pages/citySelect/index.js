@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import axios, { baseURL } from '../../utils/axios'
 import indexCss from './index.module.scss'
 import { List } from 'react-virtualized';
-import {getPointAction} from '../../store/actionCreator'
+import {getPointAction,clearCityAction} from '../../store/actionCreator'
 class App extends Component {
     state = {
         list: [],
@@ -85,7 +85,6 @@ class App extends Component {
         this.setState({currentIndex:startIndex})
     }
     clickCity = (city) => {
-        console.log(city);
         this.props.changeCity(city)
         this.props.history.go(-1)
     }
@@ -134,6 +133,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         changeCity(city){
             dispatch(getPointAction(city))
+            dispatch(clearCityAction())
         }
     }
 }

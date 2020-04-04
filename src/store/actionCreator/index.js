@@ -31,3 +31,11 @@ export const changeText = () => {
         })
     }
 } 
+
+export const clearCityAction = () => {
+    return (dispatch) => {
+        dispatch({
+            type:'clearCity',
+        })
+    }
+}

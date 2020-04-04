@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
-import { NavBar, Icon } from 'antd-mobile';
+import { NavBar, Icon, Toast } from 'antd-mobile';
 import indexCss from './index.module.scss'
 import Input from '../../component/CityInput'
 import FilterPanel from '../../component/filterPanel'
 import axios from "../../utils/axios"
 import HouseList from '../../component/houseList'
-import { List } from 'react-virtualized';
+import { List } from 'react-virtualized'
 class Index extends Component {
     Prams = {
         cityId: '',
@@ -16,23 +16,30 @@ class Index extends Component {
     FilterParams = {}
     state = {
         list: [],
-        allNum: 0
+        allNum: 0,
+        nomore:false
     }
     isLoading = true
     async componentDidMount() {
+        console.log(this.props.city)
         const res = await axios.get('/area/info?name=' + this.props.city)
         this.Prams.cityId = res.data.body.value
         this.getList()
     }
     getList = async () => {
-        // this.setState({ list:[]  });
-        const res = await axios.get('/houses', { params: this.FilterParams })
+        const res = await axios.get('/houses', { params: {...this.FilterParams,...this.Prams} })
         this.setState({
             list: [...this.state.list,...res.data.body.list],
             allNum: res.data.body.count
         })
+        if(res.data.body.list.length === 0){
+            this.setState({ nomore: true})
+        }else if(this.state.nomore){
+            this.setState({ nomore: false})
+        }
         this.isLoading = true;
-        console.log(res)
+        Toast.info(`共找到${res.data.body.count}套房子`, 2);
+        // console.log(res)
     }
     rowRenderer = ({ index, style, key }) => {
         return <div style={style} key={key}>
@@ -40,10 +47,9 @@ class Index extends Component {
         </div>
     }
     onScroll = ({ clientHeight, scrollHeight, scrollTop }) => {
-        // if(!this.state.list.length){
-        //     return;
-        // }
-        console.log(1213)
+        if(!this.state.list.length){
+            return;
+        }
         let isBottom = scrollHeight - scrollTop - clientHeight < 5;
         let isMore = this.state.allNum > this.Prams.start;
         if(isBottom && isMore && this.isLoading){
@@ -60,10 +66,11 @@ class Index extends Component {
         this.Prams.start = 1;
         this.Prams.end =  20;
         this.setState({ list:[]  });
-        this.FilterParams = {...this.Prams,...filterParams}
+        this.filterParams = filterParams;
         this.getList()
     }
     render() {
+        const {nomore} = this.state
         return (<div className={indexCss.found}>
             {/* 头部 */}
             <div className={indexCss.nav}>
@@ -90,7 +97,11 @@ class Index extends Component {
                     onScroll={this.onScroll}
                 />
             </div>
-
+            {/* 没有数据提示 */}
+           {nomore &&  <div className={indexCss.nomore}>
+               <img src="http://157.122.54.189:9060/img/not-found.png" alt=""/>
+               <p>没有找到房源，请您换个搜索条件吧~</p>
+            </div>}
         </div>);
     }
 }

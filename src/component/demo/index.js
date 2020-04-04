@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {List} from 'react-virtualized';
 
 // List data as an array of strings
