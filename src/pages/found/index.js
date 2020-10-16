@@ -10,7 +10,7 @@ import { List } from 'react-virtualized'
 class Index extends Component {
     Prams = {
         cityId: '',
-        start: 1,
+        start: 3,
         end: 20
     }
     FilterParams = {}
@@ -21,7 +21,6 @@ class Index extends Component {
     }
     isLoading = true
     async componentDidMount() {
-        console.log(this.props.city)
         const res = await axios.get('/area/info?name=' + this.props.city)
         this.Prams.cityId = res.data.body.value
         this.getList()

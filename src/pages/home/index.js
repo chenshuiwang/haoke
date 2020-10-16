@@ -37,6 +37,7 @@ class Home extends React.Component {
               <Route path="/home/index" component={Index}></Route>
             </Suspense>
           </TabBar.Item>
+          
           <TabBar.Item
             icon={<i className="iconfont icon-findHouse"></i>}
             selectedIcon={<i className="iconfont icon-findHouse"></i>}

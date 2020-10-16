@@ -11,21 +11,27 @@
     padding: 20px 0;
     display: flex;
     justify-content: space-around;
+
     .nav_item {
       width: 25%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       .pic {
-        display: flex;
-        justify-content: center;
+        width: 60px;
         img {
-          width: 60%;
+          // width: 60%;
+          // width: 20%;
+          width: 100%;
         }
+        margin-bottom: 5px;
       }
       span {
         text-align: center;
+        display: block;
+        font-size: 16px;
       }
     }
   }
@@ -87,15 +93,15 @@
         justify-content: space-between;
         border-bottom: 1px solid #ccc;
         .pic {
-          width: 40%;
+          width: 30%;
           img {
-  
+            width: 100%;
           }
         }
   
         .item_text {
           display: flex;
-          width: 60%;
+          flex: 1;
           display: flex;
           padding-left: 15px;
           flex-direction: column;
